@@ -1,885 +1,1120 @@
-<!DOCTYPE html>
-<html lang="fr">
+/* =========================
+   GENERAL SETTINGS
+========================= */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap');
 
-    <meta name="theme-color" content="#171513">
 
-    <title>THE ART OF BECOMING — Creative Portfolio</title>
+:root {
 
-    <meta name="description" content="A creative portfolio exploring art direction, fashion, culture and creation.">
+    --ink: #171513;
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    --paper: #eee8df;
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    --muted: #9c9288;
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    --wine: #641e2c;
 
-<body>
+    --red: #a51f32;
 
-    <div class="grain"></div>
+    --line: rgba(238,232,223,.24);
 
-    <!-- NAVIGATION -->
+}
 
-    <header class="topbar">
 
-        <a class="brand" href="#home">
-            THE ART OF BECOMING
-        </a>
+* {
 
-        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
-            ☰
-        </button>
+    box-sizing: border-box;
 
-    </header>
+    margin: 0;
 
-    <nav class="menu-panel" id="menuPanel">
+    padding: 0;
 
-        <small>AN ENDLESS PURSUIT OF PERFECTION</small>
+}
 
-        <a href="#act1">ACT I — APPEARANCES</a>
-        <a href="#act2">ACT II — DEVOTION</a>
-        <a href="#act3">ACT III — ANARCHY</a>
-        <a href="#epilogue">EPILOGUE</a>
 
-    </nav>
+html {
 
+    scroll-behavior: smooth;
 
-    <main>
+}
 
-        <!-- PROLOGUE -->
 
-        <section class="hero" id="home">
+body {
 
-            <div class="hero-copy">
+    background: var(--paper);
 
-                <span class="eyebrow">
-                    A CREATIVE PORTFOLIO · 2026
-                </span>
+    color: var(--ink);
 
-                <h1>
-                    <span>THE ART</span>
-                    <span>OF BECOMING</span>
-                </h1>
+    font-family: Montserrat, sans-serif;
 
-                <p class="hero-sub">
-                    An endless pursuit of perfection.
-                </p>
+    font-weight: 300;
 
-                <div class="hero-index">
+}
 
-                    <span>ART DIRECTION</span>
-                    <span>FASHION · CULTURE · CREATION</span>
 
-                </div>
+a {
 
-            </div>
+    color: inherit;
 
-            <div class="hero-art">
+    text-decoration: none;
 
-                <span class="hero-art-label">
-                    A study in contrasts.
-                </span>
+}
 
-            </div>
 
-            <div class="scroll-note">
-                SCROLL TO EXPLORE ↓
-            </div>
+button {
 
-        </section>
+    font: inherit;
 
+}
 
-        <!-- INTRODUCTION -->
 
-        <section class="intro reveal">
 
-            <span class="micro">
-                PROLOGUE — THE OPENING SCENE
-            </span>
+/* =========================
+   GRAIN EFFECT
+========================= */
 
-            <h2>
-                A world between perfection and imperfection.
-            </h2>
+.grain {
 
-            <p>
-                A personal exploration of beauty, contradiction
-                and the endless desire to create.
-            </p>
+    position: fixed;
 
-        </section>
+    inset: 0;
 
+    pointer-events: none;
 
-        <!-- ACT I -->
+    z-index: 20;
 
-        <section class="act act-one" id="act1">
+    opacity: .07;
 
-            <div class="act-copy reveal">
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
 
-                <span class="act-number">
-                    01 / THE FIRST IMPRESSION
-                </span>
+}
 
-                <h2>
-                    THE ART OF<br>APPEARANCES
-                </h2>
 
-                <p class="act-sub">
-                    An ode to beauty, culture and elegance.
-                </p>
 
-                <p class="act-desc">
-                    An archive of the worlds that shape my eye:
-                    art, ballet, cinema, architecture, music and fashion.
-                    A fascination for timeless elegance, monumental
-                    places and carefully composed images.
-                </p>
+/* =========================
+   NAVIGATION
+========================= */
 
-                <div class="act-tags">
+.topbar {
 
-                    <span>Art & heritage</span>
-                    <span>Ballet</span>
-                    <span>Architecture</span>
-                    <span>Cinema</span>
-                    <span>Fashion</span>
-                    <span>Music</span>
+    position: fixed;
 
-                </div>
+    z-index: 30;
 
-            </div>
+    top: 0;
 
-            <div class="visual visual-one">
+    left: 0;
 
-                <span class="visual-caption">
-                    The cultural archive — references, places & images.
-                </span>
+    width: 100%;
 
-            </div>
+    display: flex;
 
-        </section>
+    justify-content: space-between;
 
+    align-items: center;
 
-        <!-- ACT II -->
+    padding: 22px 4vw;
 
-        <section class="act act-two" id="act2">
+    color: #f4eee7;
 
-            <div class="act-copy reveal">
+    mix-blend-mode: difference;
 
-                <span class="act-number">
-                    02 / THE INNER CONFLICT
-                </span>
+}
 
-                <h2>
-                    TRAGIC<br>DEVOTION
-                </h2>
 
-                <p class="act-sub">
-                    An ode to beauty, desire and contradiction.
-                </p>
+.brand {
 
-                <p class="act-desc">
-                    A reflection on fashion, the human body and the cost
-                    of perfection. Textile research, animal ethics,
-                    responsible creation and an independent vision
-                    of femininity meet a darker fascination with
-                    glamour and decadence.
-                </p>
+    font-family: 'Bodoni Moda', serif;
 
-                <div class="act-tags">
+    letter-spacing: .16em;
 
-                    <span>Ethics</span>
-                    <span>Textiles & skin</span>
-                    <span>Femininity</span>
-                    <span>Beautiful decay</span>
+    font-size: 12px;
 
-                </div>
+}
 
-            </div>
 
-            <div class="visual visual-two">
+.menu-btn {
 
-                <span class="visual-caption">
-                    Beauty can enchant. It can also consume.
-                </span>
+    border: 0;
 
-            </div>
+    background: none;
 
-        </section>
+    color: inherit;
 
+    cursor: pointer;
 
-        <!-- ACT III -->
+    font-size: 22px;
 
-        <section class="act act-three" id="act3">
+}
 
-            <div class="act-copy reveal">
 
-                <span class="act-number">
-                    03 / THE CREATIVE RELEASE
-                </span>
+.menu-panel {
 
-                <h2>
-                    BEAUTIFUL<br>ANARCHY
-                </h2>
+    position: fixed;
 
-                <p class="act-sub">
-                    Where imagination becomes creation.
-                </p>
+    z-index: 29;
 
-                <p class="act-desc">
-                    Ideas, sketches, sewing experiments and projects
-                    in motion. A space for creative freedom, but also
-                    for the discipline, research and organisation
-                    that turn an intention into something real.
-                </p>
+    inset: 0;
 
-                <div class="act-tags">
+    background: var(--ink);
 
-                    <span>Creative projects</span>
-                    <span>Drawing</span>
-                    <span>Couture</span>
-                    <span>Art direction</span>
+    color: var(--paper);
 
-                </div>
+    display: flex;
 
-            </div>
+    flex-direction: column;
 
-            <div class="visual visual-three">
+    justify-content: center;
 
-                <span class="visual-caption">
-                    Fragments of ideas becoming reality.
-                </span>
+    align-items: center;
 
-            </div>
+    gap: 18px;
 
-        </section>
+    transform: translateY(-100%);
 
+    transition: transform .6s cubic-bezier(.7,0,.2,1);
 
-        <!-- SELECTED PROJECTS -->
+}
 
-        <section class="archive" id="projects">
 
-            <div class="archive-head reveal">
+.menu-panel.open {
 
-                <h3>SELECTED PROJECTS</h3>
+    transform: translateY(0);
 
-                <span class="micro">
-                    A FEW THINGS IN THE MAKING · 2026
-                </span>
+}
 
-            </div>
 
-            <div class="archive-grid">
+.menu-panel a {
 
-                <article class="archive-card reveal">
+    font: clamp(28px,5vw,58px) 'Bodoni Moda',serif;
 
-                    <small>01 — BRAND IN DEVELOPMENT</small>
+    letter-spacing: .04em;
 
-                    <strong>ESPERINES</strong>
+    text-align: center;
 
-                    <p>
-                        Lingerie, swimwear and dancewear.
-                        A study of femininity, movement and materials.
-                    </p>
+}
 
-                    <small>CONCEPT / DESIGN / RESEARCH</small>
 
-                </article>
+.menu-panel small {
 
+    font: 10px 'DM Mono',monospace;
 
-                <article class="archive-card reveal">
+    color: var(--muted);
 
-                    <small>02 — EDITORIAL PROJECT</small>
+    letter-spacing: .2em;
 
-                    <strong>
-                        LA MODE<br>EN OFF
-                    </strong>
+    margin-bottom: 22px;
 
-                    <p>
-                        Decoding fashion beyond the runway:
-                        collections, culture, trends and creative voices.
-                    </p>
+}
 
-                    <small>EDITORIAL / FASHION CULTURE</small>
 
-                </article>
 
+/* =========================
+   HERO / OPENING
+========================= */
 
-                <article class="archive-card reveal">
+.hero {
 
-                    <small>03 — PERSONAL PRACTICE</small>
+    min-height: 100svh;
 
-                    <strong>
-                        STUDIO<br>FRAGMENTS
-                    </strong>
+    background: var(--ink);
 
-                    <p>
-                        Drawings, sewing, visual research and experiments.
-                        A living collection of ideas.
-                    </p>
+    color: var(--paper);
 
-                    <small>DRAWING / COUTURE / EXPERIMENT</small>
+    position: relative;
 
-                </article>
+    display: grid;
 
-            </div>
+    grid-template-columns: 1.05fr .95fr;
 
-        </section>
+    overflow: hidden;
 
+}
 
-        <!-- EPILOGUE -->
 
-        <section class="epilogue" id="epilogue">
+.hero-copy {
 
-            <div class="epilogue-inner reveal">
+    padding: 19vh 7vw 9vh;
 
-                <span class="micro">
-                    EPILOGUE
-                </span>
+    display: flex;
 
-                <h2>
-                    TO BE<br>CONTINUED.
-                </h2>
+    flex-direction: column;
 
-                <p>
-                    The story doesn't end here.<br>
-                    It simply awaits its next chapter.
-                </p>
+    justify-content: center;
 
-                <div class="contact">
+    position: relative;
 
-                    LET'S CONNECT
+    z-index: 2;
 
-                    <br><br>
+}
 
-                    <a href="mailto:ton.adresse@email.com">
-                        TON.ADRESSE@EMAIL.COM
-                    </a>
 
-                </div>
+.eyebrow, .micro {
 
-            </div>
+    font: 10px 'DM Mono',monospace;
 
-        </section>
+    letter-spacing: .22em;
 
-    </main>
+    text-transform: uppercase;
 
+    color: var(--muted);
 
-    <!-- FOOTER -->
+}
 
-    <footer>
 
-        <span>THE ART OF BECOMING</span>
+h1 {
 
-        <span>AN ENDLESS PURSUIT OF PERFECTION</span>
+    font: clamp(54px,8vw,128px)/.88 'Bodoni Moda',serif;
 
-        <span>© 2026</span>
+    font-weight: 400;
 
-    </footer>
+    letter-spacing: -.055em;
 
+    margin: 36px 0 25px;
 
-    <!-- JAVASCRIPT -->
+}
 
-    <script>
 
-        const menuBtn = document.getElementById('menuBtn');
-        const menuPanel = document.getElementById('menuPanel');
+h1 span {
 
-        menuBtn.addEventListener('click', () => {
+    display: block;
 
-            const isOpen = menuPanel.classList.toggle('open');
+}
 
-            menuBtn.textContent = isOpen ? '×' : '☰';
 
-            menuBtn.setAttribute('aria-expanded', String(isOpen));
+.hero-sub {
 
-        });
+    font: italic clamp(18px,2vw,25px) 'Cormorant Garamond',serif;
 
+    color: #d6c9bd;
 
-        menuPanel.querySelectorAll('a').forEach(link => {
+    max-width: 350px;
 
-            link.addEventListener('click', () => {
+}
 
-                menuPanel.classList.remove('open');
 
-                menuBtn.textContent = '☰';
+.hero-index {
 
-                menuBtn.setAttribute('aria-expanded', 'false');
+    margin-top: 13vh;
 
-            });
+    display: flex;
 
-        });
+    flex-wrap: wrap;
 
+    gap: 18px 30px;
 
-        const observer = new IntersectionObserver(entries => {
+    font: 9px 'DM Mono',monospace;
 
-            entries.forEach(entry => {
+    letter-spacing: .15em;
 
-                if (entry.isIntersecting) {
+    color: var(--muted);
 
-                    entry.target.classList.add('visible');
+}
 
-                    observer.unobserve(entry.target);
 
-                }
+.hero-art {
 
-            });
+    position: relative;
 
-        }, { threshold: 0.12 });
+    min-height: 100svh;
 
+    background:
 
-        document.querySelectorAll('.reveal').forEach(element => {
+        linear-gradient(140deg,rgba(23,21,19,.05),rgba(23,21,19,.65)),
 
-            observer.observe(element);
+        url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=85')
 
-        });
+        center/cover;
 
-    </script>
+}
 
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.hero-art:after {
 
-    <meta name="theme-color" content="#171513">
+    content: "";
 
-    <title>THE ART OF BECOMING — Creative Portfolio</title>
+    position: absolute;
 
-    <meta name="description" content="A creative portfolio exploring art direction, fashion, culture and creation.">
+    inset: 0;
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    background:
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+        linear-gradient(90deg,var(--ink),transparent 35%),
 
-    <link rel="stylesheet" href="style.css">
-</head>
+        linear-gradient(0deg,rgba(23,21,19,.5),transparent 50%);
 
-<body>
+}
 
-    <div class="grain"></div>
 
-    <!-- NAVIGATION -->
+.hero-art-label {
 
-    <header class="topbar">
+    position: absolute;
 
-        <a class="brand" href="#home">
-            THE ART OF BECOMING
-        </a>
+    z-index: 2;
 
-        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
-            ☰
-        </button>
+    right: 8%;
 
-    </header>
+    bottom: 9%;
 
-    <nav class="menu-panel" id="menuPanel">
+    font: italic 22px 'Cormorant Garamond',serif;
 
-        <small>AN ENDLESS PURSUIT OF PERFECTION</small>
+    color: #f2e8dd;
 
-        <a href="#act1">ACT I — APPEARANCES</a>
-        <a href="#act2">ACT II — DEVOTION</a>
-        <a href="#act3">ACT III — ANARCHY</a>
-        <a href="#epilogue">EPILOGUE</a>
+}
 
-    </nav>
 
+.scroll-note {
 
-    <main>
+    position: absolute;
 
-        <!-- PROLOGUE -->
+    bottom: 25px;
 
-        <section class="hero" id="home">
+    left: 50%;
 
-            <div class="hero-copy">
+    transform: translateX(-50%);
 
-                <span class="eyebrow">
-                    A CREATIVE PORTFOLIO · 2026
-                </span>
+    font: 9px 'DM Mono',monospace;
 
-                <h1>
-                    <span>THE ART</span>
-                    <span>OF BECOMING</span>
-                </h1>
+    letter-spacing: .2em;
 
-                <p class="hero-sub">
-                    An endless pursuit of perfection.
-                </p>
+    color: var(--muted);
 
-                <div class="hero-index">
+    z-index: 3;
 
-                    <span>ART DIRECTION</span>
-                    <span>FASHION · CULTURE · CREATION</span>
+}
 
-                </div>
 
-            </div>
 
-            <div class="hero-art">
+/* =========================
+   PROLOGUE
+========================= */
 
-                <span class="hero-art-label">
-                    A study in contrasts.
-                </span>
+.intro {
 
-            </div>
+    padding: 125px 9vw 140px;
 
-            <div class="scroll-note">
-                SCROLL TO EXPLORE ↓
-            </div>
+    text-align: center;
 
-        </section>
+    background: var(--paper);
 
+}
 
-        <!-- INTRODUCTION -->
 
-        <section class="intro reveal">
+.intro h2 {
 
-            <span class="micro">
-                PROLOGUE — THE OPENING SCENE
-            </span>
+    font: clamp(30px,4vw,56px)/1.1 'Bodoni Moda',serif;
 
-            <h2>
-                A world between perfection and imperfection.
-            </h2>
+    font-weight: 400;
 
-            <p>
-                A personal exploration of beauty, contradiction
-                and the endless desire to create.
-            </p>
+    max-width: 850px;
 
-        </section>
+    margin: 25px auto;
 
+}
 
-        <!-- ACT I -->
 
-        <section class="act act-one" id="act1">
+.intro p {
 
-            <div class="act-copy reveal">
+    font: italic 20px 'Cormorant Garamond',serif;
 
-                <span class="act-number">
-                    01 / THE FIRST IMPRESSION
-                </span>
+    color: #71665d;
 
-                <h2>
-                    THE ART OF<br>APPEARANCES
-                </h2>
+    max-width: 530px;
 
-                <p class="act-sub">
-                    An ode to beauty, culture and elegance.
-                </p>
+    margin: auto;
 
-                <p class="act-desc">
-                    An archive of the worlds that shape my eye:
-                    art, ballet, cinema, architecture, music and fashion.
-                    A fascination for timeless elegance, monumental
-                    places and carefully composed images.
-                </p>
+    line-height: 1.5;
 
-                <div class="act-tags">
+}
 
-                    <span>Art & heritage</span>
-                    <span>Ballet</span>
-                    <span>Architecture</span>
-                    <span>Cinema</span>
-                    <span>Fashion</span>
-                    <span>Music</span>
 
-                </div>
 
-            </div>
+/* =========================
+   ACTS
+========================= */
 
-            <div class="visual visual-one">
+.act {
 
-                <span class="visual-caption">
-                    The cultural archive — references, places & images.
-                </span>
+    min-height: 90vh;
 
-            </div>
+    display: grid;
 
-        </section>
+    grid-template-columns: .85fr 1.15fr;
 
+    position: relative;
 
-        <!-- ACT II -->
+    overflow: hidden;
 
-        <section class="act act-two" id="act2">
+}
 
-            <div class="act-copy reveal">
 
-                <span class="act-number">
-                    02 / THE INNER CONFLICT
-                </span>
+.act-copy {
 
-                <h2>
-                    TRAGIC<br>DEVOTION
-                </h2>
+    padding: 13vw 7vw;
 
-                <p class="act-sub">
-                    An ode to beauty, desire and contradiction.
-                </p>
+    display: flex;
 
-                <p class="act-desc">
-                    A reflection on fashion, the human body and the cost
-                    of perfection. Textile research, animal ethics,
-                    responsible creation and an independent vision
-                    of femininity meet a darker fascination with
-                    glamour and decadence.
-                </p>
+    flex-direction: column;
 
-                <div class="act-tags">
+    justify-content: center;
 
-                    <span>Ethics</span>
-                    <span>Textiles & skin</span>
-                    <span>Femininity</span>
-                    <span>Beautiful decay</span>
+}
 
-                </div>
 
-            </div>
+.act-number {
 
-            <div class="visual visual-two">
+    font: 10px 'DM Mono',monospace;
 
-                <span class="visual-caption">
-                    Beauty can enchant. It can also consume.
-                </span>
+    letter-spacing: .2em;
 
-            </div>
+    color: var(--muted);
 
-        </section>
+}
 
 
-        <!-- ACT III -->
+.act h2 {
 
-        <section class="act act-three" id="act3">
+    font: clamp(43px,6.4vw,92px)/.92 'Bodoni Moda',serif;
 
-            <div class="act-copy reveal">
+    font-weight: 400;
 
-                <span class="act-number">
-                    03 / THE CREATIVE RELEASE
-                </span>
+    letter-spacing: -.045em;
 
-                <h2>
-                    BEAUTIFUL<br>ANARCHY
-                </h2>
+    margin: 25px 0;
 
-                <p class="act-sub">
-                    Where imagination becomes creation.
-                </p>
+}
 
-                <p class="act-desc">
-                    Ideas, sketches, sewing experiments and projects
-                    in motion. A space for creative freedom, but also
-                    for the discipline, research and organisation
-                    that turn an intention into something real.
-                </p>
 
-                <div class="act-tags">
+.act-sub {
 
-                    <span>Creative projects</span>
-                    <span>Drawing</span>
-                    <span>Couture</span>
-                    <span>Art direction</span>
+    font: italic 22px 'Cormorant Garamond',serif;
 
-                </div>
+    color: #8e8177;
 
-            </div>
+}
 
-            <div class="visual visual-three">
 
-                <span class="visual-caption">
-                    Fragments of ideas becoming reality.
-                </span>
+.act-desc {
 
-            </div>
+    font-size: 12px;
 
-        </section>
+    line-height: 2;
 
+    max-width: 340px;
 
-        <!-- SELECTED PROJECTS -->
+    margin-top: 30px;
 
-        <section class="archive" id="projects">
+    color: #665d55;
 
-            <div class="archive-head reveal">
+}
 
-                <h3>SELECTED PROJECTS</h3>
 
-                <span class="micro">
-                    A FEW THINGS IN THE MAKING · 2026
-                </span>
+.act-tags {
 
-            </div>
+    display: flex;
 
-            <div class="archive-grid">
+    flex-wrap: wrap;
 
-                <article class="archive-card reveal">
+    gap: 9px;
 
-                    <small>01 — BRAND IN DEVELOPMENT</small>
+    margin-top: 30px;
 
-                    <strong>ESPERINES</strong>
+}
 
-                    <p>
-                        Lingerie, swimwear and dancewear.
-                        A study of femininity, movement and materials.
-                    </p>
 
-                    <small>CONCEPT / DESIGN / RESEARCH</small>
+.act-tags span {
 
-                </article>
+    border: 1px solid #c8bdb1;
 
+    padding: 8px 11px;
 
-                <article class="archive-card reveal">
+    font: 9px 'DM Mono',monospace;
 
-                    <small>02 — EDITORIAL PROJECT</small>
+    letter-spacing: .1em;
 
-                    <strong>
-                        LA MODE<br>EN OFF
-                    </strong>
+    text-transform: uppercase;
 
-                    <p>
-                        Decoding fashion beyond the runway:
-                        collections, culture, trends and creative voices.
-                    </p>
+}
 
-                    <small>EDITORIAL / FASHION CULTURE</small>
 
-                </article>
+.visual {
 
+    min-height: 650px;
 
-                <article class="archive-card reveal">
+    position: relative;
 
-                    <small>03 — PERSONAL PRACTICE</small>
+    background-size: cover;
 
-                    <strong>
-                        STUDIO<br>FRAGMENTS
-                    </strong>
+    background-position: center;
 
-                    <p>
-                        Drawings, sewing, visual research and experiments.
-                        A living collection of ideas.
-                    </p>
+}
 
-                    <small>DRAWING / COUTURE / EXPERIMENT</small>
 
-                </article>
+.visual:after {
 
-            </div>
+    content: "";
 
-        </section>
+    position: absolute;
 
+    inset: 0;
 
-        <!-- EPILOGUE -->
+    background: linear-gradient(0deg,rgba(0,0,0,.28),transparent 60%);
 
-        <section class="epilogue" id="epilogue">
+}
 
-            <div class="epilogue-inner reveal">
 
-                <span class="micro">
-                    EPILOGUE
-                </span>
+.visual-caption {
 
-                <h2>
-                    TO BE<br>CONTINUED.
-                </h2>
+    position: absolute;
 
-                <p>
-                    The story doesn't end here.<br>
-                    It simply awaits its next chapter.
-                </p>
+    z-index: 2;
 
-                <div class="contact">
+    bottom: 28px;
 
-                    LET'S CONNECT
+    left: 30px;
 
-                    <br><br>
+    color: white;
 
-                    <a href="mailto:ton.adresse@email.com">
-                        TON.ADRESSE@EMAIL.COM
-                    </a>
+    font: italic 18px 'Cormorant Garamond',serif;
 
-                </div>
+}
 
-            </div>
 
-        </section>
 
-    </main>
+/* =========================
+   ACT I — THE ART OF APPEARANCES
+========================= */
 
+.act-one {
 
-    <!-- FOOTER -->
+    background: #e8e0d5;
 
-    <footer>
+}
 
-        <span>THE ART OF BECOMING</span>
 
-        <span>AN ENDLESS PURSUIT OF PERFECTION</span>
+.visual-one {
 
-        <span>© 2026</span>
+    background-image: url('https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1500&q=85');
 
-    </footer>
+}
 
 
-    <!-- JAVASCRIPT -->
 
-    <script>
+/* =========================
+   ACT II — TRAGIC DEVOTION
+========================= */
 
-        const menuBtn = document.getElementById('menuBtn');
-        const menuPanel = document.getElementById('menuPanel');
+.act-two {
 
-        menuBtn.addEventListener('click', () => {
+    background: var(--ink);
 
-            const isOpen = menuPanel.classList.toggle('open');
+    color: var(--paper);
 
-            menuBtn.textContent = isOpen ? '×' : '☰';
+    grid-template-columns: 1.1fr .9fr;
 
-            menuBtn.setAttribute('aria-expanded', String(isOpen));
+}
 
-        });
 
+.act-two .act-copy {
 
-        menuPanel.querySelectorAll('a').forEach(link => {
+    order: 2;
 
-            link.addEventListener('click', () => {
+}
 
-                menuPanel.classList.remove('open');
 
-                menuBtn.textContent = '☰';
+.act-two .act-desc {
 
-                menuBtn.setAttribute('aria-expanded', 'false');
+    color: #c0b4aa;
 
-            });
+}
 
-        });
 
+.act-two .act-sub {
 
-        const observer = new IntersectionObserver(entries => {
+    color: #c5a9a2;
 
-            entries.forEach(entry => {
+}
 
-                if (entry.isIntersecting) {
 
-                    entry.target.classList.add('visible');
+.act-two .act-tags span {
 
-                    observer.unobserve(entry.target);
+    border-color: #554943;
 
-                }
+    color: #e7dcd1;
 
-            });
+}
 
-        }, { threshold: 0.12 });
 
+.visual-two {
 
-        document.querySelectorAll('.reveal').forEach(element => {
+    order: 1;
 
-            observer.observe(element);
+    background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1500&q=85');
 
-        });
+    filter: saturate(.65);
 
-    </script>
+}
 
-</body>
-</html>
+
+
+/* =========================
+   ACT III — BEAUTIFUL ANARCHY
+========================= */
+
+.act-three {
+
+    background: #d9cec2;
+
+}
+
+
+.visual-three {
+
+    background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=85');
+
+}
+
+
+
+/* =========================
+   SELECTED PROJECTS
+========================= */
+
+.archive {
+
+    padding: 100px 7vw 120px;
+
+    background: #e8e0d5;
+
+}
+
+
+.archive-head {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 42px;
+
+    gap: 20px;
+
+}
+
+
+.archive h3 {
+
+    font: clamp(32px,4vw,58px) 'Bodoni Moda',serif;
+
+    font-weight: 400;
+
+}
+
+
+.archive-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 14px;
+
+}
+
+
+.archive-card {
+
+    min-height: 270px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: #d2c5b8;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.archive-card:nth-child(2) {
+
+    background: #292321;
+
+    color: #f1e9df;
+
+}
+
+
+.archive-card:nth-child(3) {
+
+    background: #6a2631;
+
+    color: #f1e9df;
+
+}
+
+
+.archive-card strong {
+
+    font: clamp(24px,3vw,40px) 'Bodoni Moda',serif;
+
+    font-weight: 400;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.archive-card small {
+
+    font: 9px 'DM Mono',monospace;
+
+    letter-spacing: .15em;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.archive-card p {
+
+    font: italic 17px 'Cormorant Garamond',serif;
+
+    max-width: 240px;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+
+/* =========================
+   EPILOGUE
+========================= */
+
+.epilogue {
+
+    min-height: 85vh;
+
+    background: var(--ink);
+
+    color: var(--paper);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.epilogue:before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 70vw;
+
+    height: 70vw;
+
+    border: 1px solid rgba(238,232,223,.12);
+
+    border-radius: 50%;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+}
+
+
+.epilogue-inner {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.epilogue h2 {
+
+    font: clamp(48px,8vw,110px)/.95 'Bodoni Moda',serif;
+
+    font-weight: 400;
+
+    margin: 30px 0;
+
+}
+
+
+.epilogue p {
+
+    font: italic 22px 'Cormorant Garamond',serif;
+
+    color: #c7b9ad;
+
+}
+
+
+.contact {
+
+    margin-top: 65px;
+
+    font: 10px 'DM Mono',monospace;
+
+    letter-spacing: .18em;
+
+}
+
+
+.contact a {
+
+    border-bottom: 1px solid var(--wine);
+
+    padding-bottom: 7px;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 22px 4vw;
+
+    background: var(--ink);
+
+    color: #887d74;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    font: 9px 'DM Mono',monospace;
+
+    letter-spacing: .12em;
+
+}
+
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition: opacity .8s ease, transform .8s ease;
+
+}
+
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform: none;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE — IPAD & MOBILE
+========================= */
+
+@media (max-width:760px) {
+
+    .topbar {
+
+        padding: 18px 6vw;
+
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        min-height: 100svh;
+
+    }
+
+
+    .hero-copy {
+
+        padding: 20vh 8vw 7vh;
+
+        min-height: 72svh;
+
+    }
+
+
+    .hero-art {
+
+        position: absolute;
+
+        inset: 0;
+
+        min-height: 100%;
+
+        opacity: .42;
+
+    }
+
+
+    .hero-art:after {
+
+        background:
+
+            linear-gradient(90deg,rgba(23,21,19,.8),rgba(23,21,19,.2)),
+
+            linear-gradient(0deg,var(--ink),transparent 60%);
+
+    }
+
+
+    h1 {
+
+        font-size: clamp(58px,15vw,92px);
+
+    }
+
+
+    .hero-index {
+
+        margin-top: 9vh;
+
+    }
+
+
+    .act, .act-two {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .act-copy {
+
+        padding: 90px 8vw 65px;
+
+        min-height: 430px;
+
+    }
+
+
+    .visual {
+
+        min-height: 58vh;
+
+    }
+
+
+    .act-two .act-copy,
+
+    .act-two .visual {
+
+        order: initial;
+
+    }
+
+
+    .archive {
+
+        padding: 75px 7vw;
+
+    }
+
+
+    .archive-head {
+
+        display: block;
+
+    }
+
+
+    .archive-head .micro {
+
+        display: block;
+
+        margin-top: 12px;
+
+    }
+
+
+    .archive-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .archive-card {
+
+        min-height: 220px;
+
+    }
+
+
+    .intro {
+
+        padding: 90px 8vw;
+
+    }
+
+
+    .scroll-note {
+
+        left: 8vw;
+
+        transform: none;
+
+    }
+
+
+    footer {
+
+        flex-wrap: wrap;
+
+    }
+
+}
