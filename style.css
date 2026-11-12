@@ -35,3 +35,37 @@ p {
     letter-spacing: 2px;
 }
 }
+/* MENU DE NAVIGATION */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    border-bottom: 1px solid #D6CEC3;
+}
+
+/* LOGO */
+
+.logo {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #171617;
+    text-decoration: none;
+}
+
+/* LIENS DU MENU */
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #171617;
+    text-decoration: none;
+}
