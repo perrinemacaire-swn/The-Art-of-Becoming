@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&family=Monsieur+La+Doulaise&display=swap');
 /* PARAMÈTRES GÉNÉRAUX */
 
 * {
@@ -9,7 +10,7 @@
 /* APPARENCE DE LA PAGE */
 
 body {
-    background-color: #F5E5E8;
+    background-color: #F1EAE0;
     color: #171617;
     font-family: Georgia, serif;
 }
