@@ -1,1 +1,32 @@
+/* PARAMÈTRES GÉNÉRAUX */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* APPARENCE DE LA PAGE */
+
+body {
+    background-color: #F1EAE0;
+    color: #171617;
+    font-family: Georgia, serif;
+}
+
+/* GRAND TITRE */
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 8px;
+    font-weight: normal;
+}
+
+/* PARAGRAPHE */
+
+p {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
