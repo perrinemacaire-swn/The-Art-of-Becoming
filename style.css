@@ -1124,7 +1124,7 @@ footer {
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: #A51F32;
+    background: #7A0920;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1138,7 +1138,7 @@ footer {
     top: 0;
     width: 50.5%;
     height: 100%;
-    background-color: #A51F32;
+    background-color: #7A0920;
     z-index: 1;
 
     background-image:
