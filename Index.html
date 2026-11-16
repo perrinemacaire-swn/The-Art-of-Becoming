@@ -42,80 +42,127 @@
     </div>
 </div>
     
-<body>
-    <div class="grain"></div>
+<!-- BANDEAU FIXE -->
+<header class="topbar">
 
-    <!-- NAVIGATION -->
+    <a href="index.html" class="brand">
+        <span>Portfolio 2026-2027</span>
+        <span>Perrine Macaire</span>
+    </a>
 
-    <header class="topbar">
+    <button class="menu-trigger" id="menuBtn"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false">
 
-        <a class="brand" href="#home">
-            THE ART OF BECOMING
-        </a>
+        <img src="images/ornement-menu.jpg" alt="Menu">
 
-        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
-            ☰
-        </button>
+    </button>
 
-    </header>
-
-    <nav class="menu-panel" id="menuPanel">
-
-        <small>AN ENDLESS PURSUIT OF PERFECTION</small>
-
-        <a href="#act1">ACT I — APPEARANCES</a>
-        <a href="#act2">ACT II — DEVOTION</a>
-        <a href="#act3">ACT III — ANARCHY</a>
-        <a href="#epilogue">EPILOGUE</a>
-
-    </nav>
+</header>
 
 
-    <main>
+<!-- MENU INTERACTIF -->
+<div class="menu-overlay" id="menuOverlay"></div>
 
-        <!-- PROLOGUE -->
+<nav class="menu-panel" id="menuPanel">
 
-        <section class="hero" id="home">
+    <div class="menu-heading">
 
-            <div class="hero-copy">
+        <span class="menu-decoration">
+            <img src="images/ornement-menu.jpg" alt="">
+        </span>
 
-                <span class="eyebrow">
-                    A CREATIVE PORTFOLIO · 2026
-                </span>
+        <h2>MENU</h2>
 
-                <h1>
-                    <span>THE ART</span>
-                    <span>OF BECOMING</span>
-                </h1>
+    </div>
 
-                <p class="hero-sub">
-                    An endless pursuit of perfection.
-                </p>
+    <a href="prologue.html" class="menu-link">
+        <span>PROLOGUE</span>
+        <i>La Galerie</i>
+    </a>
 
-                <div class="hero-index">
+    <a href="act1.html" class="menu-link">
+        <span>ACT I</span>
+        <i>The Art of Appearances</i>
+    </a>
 
-                    <span>ART DIRECTION</span>
-                    <span>FASHION · CULTURE · CREATION</span>
+    <a href="act2.html" class="menu-link">
+        <span>ACT II</span>
+        <i>Tragic Devotion</i>
+    </a>
 
-                </div>
+    <a href="act3.html" class="menu-link">
+        <span>ACT III</span>
+        <i>Beautiful Anarchy</i>
+    </a>
 
-            </div>
+    <a href="epilogue.html" class="menu-link">
+        <span>EPILOGUE</span>
+        <i>To be continued</i>
+    </a>
 
-            <div class="hero-art">
-
-                <span class="hero-art-label">
-                    A study in contrasts.
-                </span>
-
-            </div>
-
-            <div class="scroll-note">
-                SCROLL TO EXPLORE ↓
-            </div>
-
-        </section>
+</nav>
 
 
+<!-- PAGE D'ACCUEIL -->
+<main>
+
+    <section class="home-hero" id="home">
+
+        <div class="hero-image"></div>
+
+        <div class="hero-title">
+            <h1>
+                THE ART<br>
+                OF<br>
+                BECOMING
+            </h1>
+        </div>
+
+        <div class="hero-signature">
+            <p>An endless pursuit of perfection</p>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const menuPanel = document.getElementById("menuPanel");
+const menuOverlay = document.getElementById("menuOverlay");
+
+function toggleMenu() {
+
+    const isOpen = menuPanel.classList.toggle("active");
+
+    menuOverlay.classList.toggle("active", isOpen);
+
+    menuBtn.classList.toggle("active", isOpen);
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+
+}
+
+menuBtn.addEventListener("click", toggleMenu);
+
+menuOverlay.addEventListener("click", toggleMenu);
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape" &&
+        menuPanel.classList.contains("active")) {
+
+        toggleMenu();
+
+    }
+
+});
+
+</script>
         <!-- INTRODUCTION -->
 
         <section class="intro reveal">
