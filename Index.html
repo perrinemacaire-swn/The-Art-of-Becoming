@@ -461,7 +461,20 @@
         });
 
     </script>
+<script>
+const curtain = document.getElementById("curtain");
+const actionButton = document.getElementById("actionButton");
 
+actionButton.addEventListener("click", function() {
+
+    curtain.classList.add("open");
+
+    setTimeout(function() {
+        curtain.classList.add("finished");
+    }, 2100);
+
+});
+</script>
 </body>
 </html><!DOCTYPE html>
 <html lang="fr">
