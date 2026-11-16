@@ -1,1158 +1,65 @@
-/* =========================
-   GENERAL SETTINGS
-========================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap');
-
+/* =====================================
+   IDENTITE VISUELLE
+===================================== */
 
 :root {
-
-    --ink: #171513;
-
-    --paper: #eee8df;
-
-    --muted: #9c9288;
-
-    --wine: #641e2c;
-
-    --red: #a51f32;
-
-    --line: rgba(238,232,223,.24);
-
+    --burgundy: #7A0920;
+    --ivory: #F1EAE0;
+    --black: #171313;
 }
 
+
+/* =====================================
+   BASE DU SITE
+===================================== */
 
 * {
-
-    box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
+    box-sizing: border-box;
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
-
 
 body {
-
-    background: var(--paper);
-
-    color: var(--ink);
-
-    font-family: Montserrat, sans-serif;
-
-    font-weight: 300;
-
+    background: var(--burgundy);
+    color: var(--ivory);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
 }
-
 
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
-
 
 button {
-
-    font: inherit;
-
-}
-
-
-
-/* =========================
-   GRAIN EFFECT
-========================= */
-
-.grain {
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 20;
-
-    opacity: .07;
-
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-
-}
-
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.topbar {
-
-    position: fixed;
-
-    z-index: 30;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 22px 4vw;
-
-    color: #f4eee7;
-
-    mix-blend-mode: difference;
-
-}
-
-
-.brand {
-
-    font-family: 'Bodoni Moda', serif;
-
-    letter-spacing: .16em;
-
-    font-size: 12px;
-
-}
-
-
-.menu-btn {
-
-    border: 0;
-
-    background: none;
-
-    color: inherit;
-
-    cursor: pointer;
-
-    font-size: 22px;
-
-}
-
-
-.menu-panel {
-
-    position: fixed;
-
-    z-index: 29;
-
-    inset: 0;
-
-    background: var(--ink);
-
-    color: var(--paper);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 18px;
-
-    transform: translateY(-100%);
-
-    transition: transform .6s cubic-bezier(.7,0,.2,1);
-
-}
-
-
-.menu-panel.open {
-
-    transform: translateY(0);
-
-}
-
-
-.menu-panel a {
-
-    font: clamp(28px,5vw,58px) 'Bodoni Moda',serif;
-
-    letter-spacing: .04em;
-
-    text-align: center;
-
-}
-
-
-.menu-panel small {
-
-    font: 10px 'DM Mono',monospace;
-
-    color: var(--muted);
-
-    letter-spacing: .2em;
-
-    margin-bottom: 22px;
-
-}
-
-
-
-/* =========================
-   HERO / OPENING
-========================= */
-
-.hero {
-
-    min-height: 100svh;
-
-    background: var(--ink);
-
-    color: var(--paper);
-
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns: 1.05fr .95fr;
-
-    overflow: hidden;
-
-}
-
-
-.hero-copy {
-
-    padding: 19vh 7vw 9vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    position: relative;
-
-    z-index: 2;
-
-}
-
-
-.eyebrow, .micro {
-
-    font: 10px 'DM Mono',monospace;
-
-    letter-spacing: .22em;
-
-    text-transform: uppercase;
-
-    color: var(--muted);
-
-}
-
-
-h1 {
-
-    font: clamp(54px,8vw,128px)/.88 'Bodoni Moda',serif;
-
-    font-weight: 400;
-
-    letter-spacing: -.055em;
-
-    margin: 36px 0 25px;
-
-}
-
-
-h1 span {
-
-    display: block;
-
-}
-
-
-.hero-sub {
-
-    font: italic clamp(18px,2vw,25px) 'Cormorant Garamond',serif;
-
-    color: #d6c9bd;
-
-    max-width: 350px;
-
-}
-
-
-.hero-index {
-
-    margin-top: 13vh;
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 18px 30px;
-
-    font: 9px 'DM Mono',monospace;
-
-    letter-spacing: .15em;
-
-    color: var(--muted);
-
-}
-
-
-.hero-art {
-
-    position: relative;
-
-    min-height: 100svh;
-
-    background:
-
-        linear-gradient(140deg,rgba(23,21,19,.05),rgba(23,21,19,.65)),
-
-        url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=85')
-
-        center/cover;
-
-}
-
-
-.hero-art:after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        linear-gradient(90deg,var(--ink),transparent 35%),
-
-        linear-gradient(0deg,rgba(23,21,19,.5),transparent 50%);
-
-}
-
-
-.hero-art-label {
-
-    position: absolute;
-
-    z-index: 2;
-
-    right: 8%;
-
-    bottom: 9%;
-
-    font: italic 22px 'Cormorant Garamond',serif;
-
-    color: #f2e8dd;
-
-}
-
-
-.scroll-note {
-
-    position: absolute;
-
-    bottom: 25px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    font: 9px 'DM Mono',monospace;
-
-    letter-spacing: .2em;
-
-    color: var(--muted);
-
-    z-index: 3;
-
-}
-
-
-
-/* =========================
-   PROLOGUE
-========================= */
-
-.intro {
-
-    padding: 125px 9vw 140px;
-
-    text-align: center;
-
-    background: var(--paper);
-
-}
-
-
-.intro h2 {
-
-    font: clamp(30px,4vw,56px)/1.1 'Bodoni Moda',serif;
-
-    font-weight: 400;
-
-    max-width: 850px;
-
-    margin: 25px auto;
-
-}
-
-
-.intro p {
-
-    font: italic 20px 'Cormorant Garamond',serif;
-
-    color: #71665d;
-
-    max-width: 530px;
-
-    margin: auto;
-
-    line-height: 1.5;
-
-}
-
-
-
-/* =========================
-   ACTS
-========================= */
-
-.act {
-
-    min-height: 90vh;
-
-    display: grid;
-
-    grid-template-columns: .85fr 1.15fr;
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-.act-copy {
-
-    padding: 13vw 7vw;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-}
-
-
-.act-number {
-
-    font: 10px 'DM Mono',monospace;
-
-    letter-spacing: .2em;
-
-    color: var(--muted);
-
-}
-
-
-.act h2 {
-
-    font: clamp(43px,6.4vw,92px)/.92 'Bodoni Moda',serif;
-
-    font-weight: 400;
-
-    letter-spacing: -.045em;
-
-    margin: 25px 0;
-
-}
-
-
-.act-sub {
-
-    font: italic 22px 'Cormorant Garamond',serif;
-
-    color: #8e8177;
-
-}
-
-
-.act-desc {
-
-    font-size: 12px;
-
-    line-height: 2;
-
-    max-width: 340px;
-
-    margin-top: 30px;
-
-    color: #665d55;
-
-}
-
-
-.act-tags {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 9px;
-
-    margin-top: 30px;
-
-}
-
-
-.act-tags span {
-
-    border: 1px solid #c8bdb1;
-
-    padding: 8px 11px;
-
-    font: 9px 'DM Mono',monospace;
-
-    letter-spacing: .1em;
-
-    text-transform: uppercase;
-
-}
-
-
-.visual {
-
-    min-height: 650px;
-
-    position: relative;
-
-    background-size: cover;
-
-    background-position: center;
-
-}
-
-
-.visual:after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background: linear-gradient(0deg,rgba(0,0,0,.28),transparent 60%);
-
-}
-
-
-.visual-caption {
-
-    position: absolute;
-
-    z-index: 2;
-
-    bottom: 28px;
-
-    left: 30px;
-
-    color: white;
-
-    font: italic 18px 'Cormorant Garamond',serif;
-
-}
-
-
-
-/* =========================
-   ACT I — THE ART OF APPEARANCES
-========================= */
-
-.act-one {
-
-    background: #e8e0d5;
-
-}
-
-
-.visual-one {
-
-    background-image: url('https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1500&q=85');
-
-}
-
-
-
-/* =========================
-   ACT II — TRAGIC DEVOTION
-========================= */
-
-.act-two {
-
-    background: var(--ink);
-
-    color: var(--paper);
-
-    grid-template-columns: 1.1fr .9fr;
-
-}
-
-
-.act-two .act-copy {
-
-    order: 2;
-
-}
-
-
-.act-two .act-desc {
-
-    color: #c0b4aa;
-
-}
-
-
-.act-two .act-sub {
-
-    color: #c5a9a2;
-
-}
-
-
-.act-two .act-tags span {
-
-    border-color: #554943;
-
-    color: #e7dcd1;
-
-}
-
-
-.visual-two {
-
-    order: 1;
-
-    background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1500&q=85');
-
-    filter: saturate(.65);
-
-}
-
-
-
-/* =========================
-   ACT III — BEAUTIFUL ANARCHY
-========================= */
-
-.act-three {
-
-    background: #d9cec2;
-
-}
-
-
-.visual-three {
-
-    background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=85');
-
-}
-
-
-
-/* =========================
-   SELECTED PROJECTS
-========================= */
-
-.archive {
-
-    padding: 100px 7vw 120px;
-
-    background: #e8e0d5;
-
-}
-
-
-.archive-head {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: end;
-
-    margin-bottom: 42px;
-
-    gap: 20px;
-
-}
-
-
-.archive h3 {
-
-    font: clamp(32px,4vw,58px) 'Bodoni Moda',serif;
-
-    font-weight: 400;
-
-}
-
-
-.archive-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 14px;
-
-}
-
-
-.archive-card {
-
-    min-height: 270px;
-
-    padding: 25px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    background: #d2c5b8;
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-.archive-card:nth-child(2) {
-
-    background: #292321;
-
-    color: #f1e9df;
-
-}
-
-
-.archive-card:nth-child(3) {
-
-    background: #6a2631;
-
-    color: #f1e9df;
-
-}
-
-
-.archive-card strong {
-
-    font: clamp(24px,3vw,40px) 'Bodoni Moda',serif;
-
-    font-weight: 400;
-
-    position: relative;
-
-    z-index: 1;
-
-}
-
-
-.archive-card small {
-
-    font: 9px 'DM Mono',monospace;
-
-    letter-spacing: .15em;
-
-    position: relative;
-
-    z-index: 1;
-
-}
-
-
-.archive-card p {
-
-    font: italic 17px 'Cormorant Garamond',serif;
-
-    max-width: 240px;
-
-    position: relative;
-
-    z-index: 1;
-
-}
-
-
-
-/* =========================
-   EPILOGUE
-========================= */
-
-.epilogue {
-
-    min-height: 85vh;
-
-    background: var(--ink);
-
-    color: var(--paper);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 100px 25px;
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-.epilogue:before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 70vw;
-
-    height: 70vw;
-
-    border: 1px solid rgba(238,232,223,.12);
-
-    border-radius: 50%;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform: translate(-50%,-50%);
-
-}
-
-
-.epilogue-inner {
-
-    position: relative;
-
-    z-index: 1;
-
-}
-
-
-.epilogue h2 {
-
-    font: clamp(48px,8vw,110px)/.95 'Bodoni Moda',serif;
-
-    font-weight: 400;
-
-    margin: 30px 0;
-
-}
-
-
-.epilogue p {
-
-    font: italic 22px 'Cormorant Garamond',serif;
-
-    color: #c7b9ad;
-
-}
-
-
-.contact {
-
-    margin-top: 65px;
-
-    font: 10px 'DM Mono',monospace;
-
-    letter-spacing: .18em;
-
-}
-
-
-.contact a {
-
-    border-bottom: 1px solid var(--wine);
-
-    padding-bottom: 7px;
-
-}
-
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    padding: 22px 4vw;
-
-    background: var(--ink);
-
-    color: #887d74;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    font: 9px 'DM Mono',monospace;
-
-    letter-spacing: .12em;
-
-}
-
-
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-.reveal {
-
-    opacity: 0;
-
-    transform: translateY(28px);
-
-    transition: opacity .8s ease, transform .8s ease;
-
-}
-
-
-.reveal.visible {
-
-    opacity: 1;
-
-    transform: none;
-
+    font-family: inherit;
 }
-
-
-
-/* =========================
-   RESPONSIVE — IPAD & MOBILE
-========================= */
-
-@media (max-width:760px) {
-
-    .topbar {
-
-        padding: 18px 6vw;
-
-    }
-
-
-    .hero {
-
-        grid-template-columns: 1fr;
-
-        min-height: 100svh;
-
-    }
-
-
-    .hero-copy {
-
-        padding: 20vh 8vw 7vh;
-
-        min-height: 72svh;
-
-    }
-
-
-    .hero-art {
-
-        position: absolute;
-
-        inset: 0;
-
-        min-height: 100%;
-
-        opacity: .42;
-
-    }
-
 
-    .hero-art:after {
 
-        background:
-
-            linear-gradient(90deg,rgba(23,21,19,.8),rgba(23,21,19,.2)),
-
-            linear-gradient(0deg,var(--ink),transparent 60%);
-
-    }
-
-
-    h1 {
-
-        font-size: clamp(58px,15vw,92px);
-
-    }
-
-
-    .hero-index {
-
-        margin-top: 9vh;
-
-    }
-
-
-    .act, .act-two {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .act-copy {
-
-        padding: 90px 8vw 65px;
-
-        min-height: 430px;
-
-    }
-
-
-    .visual {
-
-        min-height: 58vh;
-
-    }
-
-
-    .act-two .act-copy,
-
-    .act-two .visual {
-
-        order: initial;
-
-    }
-
-
-    .archive {
-
-        padding: 75px 7vw;
-
-    }
-
-
-    .archive-head {
-
-        display: block;
-
-    }
-
-
-    .archive-head .micro {
-
-        display: block;
-
-        margin-top: 12px;
-
-    }
-
-
-    .archive-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .archive-card {
-
-        min-height: 220px;
-
-    }
-
-
-    .intro {
-
-        padding: 90px 8vw;
-
-    }
-
-
-    .scroll-note {
-
-        left: 8vw;
-
-        transform: none;
-
-    }
-
-
-    footer {
-
-        flex-wrap: wrap;
-
-    }
-
-}
-/* RIDEAU D'OUVERTURE */
+/* =====================================
+   RIDEAU D'OUVERTURE
+===================================== */
 
 #curtain {
     position: fixed;
     inset: 0;
-    z-index: 9999;
-    background: #7A0920;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 2000;
     overflow: hidden;
+    background: var(--burgundy);
 }
-
-/* LES DEUX PANS */
 
 .curtain-panel {
     position: absolute;
     top: 0;
-    width: 50.5%;
+    width: 50%;
     height: 100%;
-    background-color: #7A0920;
+    background: var(--burgundy);
     z-index: 1;
-
-    background-image:
-        repeating-linear-gradient(
-            90deg,
-            rgba(0,0,0,0.12) 0px,
-            transparent 18px,
-            rgba(255,255,255,0.08) 35px,
-            transparent 55px
-        );
-
-    box-shadow: inset 0 0 70px rgba(0,0,0,0.2);
-
-    transition: transform 2s cubic-bezier(.77,0,.18,1);
+    transition: transform 1.2s cubic-bezier(.77, 0, .18, 1);
 }
 
 .curtain-panel.left {
@@ -1163,63 +70,74 @@ footer {
     right: 0;
 }
 
-/* TEXTE */
-
 .curtain-content {
-    position: relative;
+    position: absolute;
+    inset: 0;
     z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
-    color: #F1EAE0;
-    transition: opacity .5s ease;
+
+    transition: opacity 0.5s ease;
 }
 
-.curtain-subtitle,
-.curtain-footer {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 4px;
+.curtain-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
 }
 
 .curtain-content h1 {
     font-family: 'Bodoni Moda', serif;
-    font-size: clamp(45px, 8vw, 105px);
+    font-size: clamp(55px, 9vw, 115px);
     font-weight: 400;
-    line-height: .9;
-    margin: 35px 0;
+    line-height: 0.95;
+    letter-spacing: -2px;
 }
-
-.curtain-content h1 i {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-}
-
-/* BOUTON ACTION */
 
 #actionButton {
-    margin: 25px 0;
+    margin-top: 45px;
     padding: 15px 45px;
-    border: 1px solid #F1EAE0;
+
+    border: 1px solid var(--ivory);
     background: transparent;
-    color: #F1EAE0;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    color: var(--ivory);
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
     letter-spacing: 4px;
+
     cursor: pointer;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 
 #actionButton:hover {
-    background: #F1EAE0;
-    color: #A51F32;
+    background: var(--ivory);
+    color: var(--burgundy);
 }
 
-/* ANIMATION D'OUVERTURE */
+.curtain-footer {
+    position: absolute;
+    bottom: 45px;
 
-#curtain.open .left {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+
+/* ANIMATION DU RIDEAU */
+
+#curtain.open .curtain-panel.left {
     transform: translateX(-100%);
 }
 
-#curtain.open .right {
+#curtain.open .curtain-panel.right {
     transform: translateX(100%);
 }
 
@@ -1228,8 +146,352 @@ footer {
     pointer-events: none;
 }
 
-/* DISPARITION FINALE */
-
 #curtain.finished {
     display: none;
+}
+
+
+/* =====================================
+   BANDEAU FIXE
+===================================== */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--burgundy);
+    z-index: 1000;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.brand span:first-child {
+    font-size: 14px;
+}
+
+
+/* =====================================
+   BOUTON MENU
+===================================== */
+
+.menu-button {
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.menu-button img {
+    width: 42px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* =====================================
+   MENU LATERAL
+===================================== */
+
+.menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 40%;
+    height: 100vh;
+
+    padding: 110px 8% 40px;
+
+    background: var(--burgundy);
+
+    z-index: 1200;
+
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-panel.active {
+    transform: translateX(0);
+}
+
+.menu-panel h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 34px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-decoration {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.menu-decoration img {
+    width: 55px;
+    height: auto;
+}
+
+.menu-link {
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px 0;
+
+    border-top: 1px solid rgba(241, 234, 224, 0.45);
+
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.menu-link:last-child {
+    border-bottom: 1px solid rgba(241, 234, 224, 0.45);
+}
+
+.menu-link span {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 23px;
+    letter-spacing: 2px;
+}
+
+.menu-link i {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.menu-link:hover {
+    opacity: 0.6;
+}
+
+
+/* =====================================
+   VOILE DU MENU
+===================================== */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.5s ease;
+
+    z-index: 1100;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =====================================
+   PAGE D'ACCUEIL
+===================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: var(--burgundy);
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/danse-theatre.jpg");
+    background-size: cover;
+    background-position: center;
+
+    z-index: 1;
+}
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.35),
+        transparent 75%
+    );
+}
+
+
+/* =====================================
+   TITRE PRINCIPAL
+===================================== */
+
+.hero-title {
+    position: absolute;
+
+    top: 38%;
+    left: 7%;
+
+    z-index: 2;
+}
+
+.hero-title h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(55px, 8vw, 125px);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -3px;
+}
+
+
+/* =====================================
+   SIGNATURE
+===================================== */
+
+.hero-signature {
+    position: absolute;
+
+    right: 8%;
+    bottom: 25%;
+
+    z-index: 2;
+
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: clamp(35px, 5vw, 75px);
+    line-height: 1;
+
+    text-align: center;
+}
+
+
+/* =====================================
+   BAS DE PAGE
+===================================== */
+
+.hero-bottom {
+    position: absolute;
+
+    left: 5%;
+    right: 5%;
+    bottom: 30px;
+
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   ADAPTATION IPAD / TELEPHONE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        height: 65px;
+        padding: 0 5%;
+    }
+
+    .brand {
+        font-size: 15px;
+    }
+
+    .menu-panel {
+        width: 75%;
+        padding: 100px 8% 30px;
+    }
+
+    .menu-panel h2 {
+        font-size: 29px;
+    }
+
+    .menu-link span {
+        font-size: 20px;
+    }
+
+    .menu-link i {
+        font-size: 17px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-title {
+        top: 35%;
+        left: 6%;
+    }
+
+    .hero-title h2 {
+        font-size: clamp(48px, 12vw, 85px);
+        letter-spacing: -2px;
+    }
+
+    .hero-signature {
+        right: 7%;
+        bottom: 20%;
+        font-size: 42px;
+    }
+
+    .hero-bottom {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .curtain-content h1 {
+        font-size: 55px;
+    }
+
+    .curtain-subtitle {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .curtain-footer {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
 }
