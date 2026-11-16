@@ -5,889 +5,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#171513">
+    <title>THE ART OF BECOMING — Perrine Macaire</title>
 
-    <title>THE ART OF BECOMING — Creative Portfolio</title>
-
-    <meta name="description" content="A creative portfolio exploring art direction, fashion, culture and creation.">
+    <meta name="description" content="A creative portfolio by Perrine Macaire.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-</head>
-    <!-- INTRODUCTION : RIDEAU -->
-<div id="curtain">
-
-    <div class="curtain-panel left"></div>
-    <div class="curtain-panel right"></div>
-
-    <div class="curtain-content">
-        <p class="curtain-subtitle">A CREATIVE PORTFOLIO</p>
-
-        <h1>
-            THE ART OF<br>
-            <i>BECOMING</i>
-        </h1>
-
-        <button id="actionButton">
-            LEVER DE RIDEAU
-        </button>
-
-        <p class="curtain-footer">
-            AN ENDLESS PURSUIT OF PERFECTION
-        </p>
-    </div>
-</div>
-    
-<!-- BANDEAU FIXE -->
-<header class="topbar">
-
-    <a href="index.html" class="brand">
-        <span>Portfolio 2026-2027</span>
-        <span>Perrine Macaire</span>
-    </a>
-
-    <button class="menu-trigger" id="menuBtn"
-            aria-label="Ouvrir le menu"
-            aria-expanded="false">
-
-        <img src="images/ornement-menu.jpg" alt="Menu">
-
-    </button>
-
-</header>
-
-
-<!-- MENU INTERACTIF -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<nav class="menu-panel" id="menuPanel">
-
-    <div class="menu-heading">
-
-        <span class="menu-decoration">
-            <img src="images/ornement-menu.jpg" alt="">
-        </span>
-
-        <h2>MENU</h2>
-
-    </div>
-
-    <a href="prologue.html" class="menu-link">
-        <span>PROLOGUE</span>
-        <i>La Galerie</i>
-    </a>
-
-    <a href="act1.html" class="menu-link">
-        <span>ACT I</span>
-        <i>The Art of Appearances</i>
-    </a>
-
-    <a href="act2.html" class="menu-link">
-        <span>ACT II</span>
-        <i>Tragic Devotion</i>
-    </a>
-
-    <a href="act3.html" class="menu-link">
-        <span>ACT III</span>
-        <i>Beautiful Anarchy</i>
-    </a>
-
-    <a href="epilogue.html" class="menu-link">
-        <span>EPILOGUE</span>
-        <i>To be continued</i>
-    </a>
-
-</nav>
-
-
-<!-- PAGE D'ACCUEIL -->
-<main>
-
-    <section class="home-hero" id="home">
-
-        <div class="hero-image"></div>
-
-        <div class="hero-title">
-            <h1>
-                THE ART<br>
-                OF<br>
-                BECOMING
-            </h1>
-        </div>
-
-        <div class="hero-signature">
-            <p>An endless pursuit of perfection</p>
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- JAVASCRIPT -->
-<script>
-
-const menuBtn = document.getElementById("menuBtn");
-const menuPanel = document.getElementById("menuPanel");
-const menuOverlay = document.getElementById("menuOverlay");
-
-function toggleMenu() {
-
-    const isOpen = menuPanel.classList.toggle("active");
-
-    menuOverlay.classList.toggle("active", isOpen);
-
-    menuBtn.classList.toggle("active", isOpen);
-
-    menuBtn.setAttribute("aria-expanded", isOpen);
-
-}
-
-menuBtn.addEventListener("click", toggleMenu);
-
-menuOverlay.addEventListener("click", toggleMenu);
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape" &&
-        menuPanel.classList.contains("active")) {
-
-        toggleMenu();
-
-    }
-
-});
-
-</script>
-        <!-- INTRODUCTION -->
-
-        <section class="intro reveal">
-
-            <span class="micro">
-                PROLOGUE — THE OPENING SCENE
-            </span>
-
-            <h2>
-                A world between perfection and imperfection.
-            </h2>
-
-            <p>
-                A personal exploration of beauty, contradiction
-                and the endless desire to create.
-            </p>
-
-        </section>
-
-
-        <!-- ACT I -->
-
-        <section class="act act-one" id="act1">
-
-            <div class="act-copy reveal">
-
-                <span class="act-number">
-                    01 / THE FIRST IMPRESSION
-                </span>
-
-                <h2>
-                    THE ART OF<br>APPEARANCES
-                </h2>
-
-                <p class="act-sub">
-                    An ode to beauty, culture and elegance.
-                </p>
-
-                <p class="act-desc">
-                    An archive of the worlds that shape my eye:
-                    art, ballet, cinema, architecture, music and fashion.
-                    A fascination for timeless elegance, monumental
-                    places and carefully composed images.
-                </p>
-
-                <div class="act-tags">
-
-                    <span>Art & heritage</span>
-                    <span>Ballet</span>
-                    <span>Architecture</span>
-                    <span>Cinema</span>
-                    <span>Fashion</span>
-                    <span>Music</span>
-
-                </div>
-
-            </div>
-
-            <div class="visual visual-one">
-
-                <span class="visual-caption">
-                    The cultural archive — references, places & images.
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- ACT II -->
-
-        <section class="act act-two" id="act2">
-
-            <div class="act-copy reveal">
-
-                <span class="act-number">
-                    02 / THE INNER CONFLICT
-                </span>
-
-                <h2>
-                    TRAGIC<br>DEVOTION
-                </h2>
-
-                <p class="act-sub">
-                    An ode to beauty, desire and contradiction.
-                </p>
-
-                <p class="act-desc">
-                    A reflection on fashion, the human body and the cost
-                    of perfection. Textile research, animal ethics,
-                    responsible creation and an independent vision
-                    of femininity meet a darker fascination with
-                    glamour and decadence.
-                </p>
-
-                <div class="act-tags">
-
-                    <span>Ethics</span>
-                    <span>Textiles & skin</span>
-                    <span>Femininity</span>
-                    <span>Beautiful decay</span>
-
-                </div>
-
-            </div>
-
-            <div class="visual visual-two">
-
-                <span class="visual-caption">
-                    Beauty can enchant. It can also consume.
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- ACT III -->
-
-        <section class="act act-three" id="act3">
-
-            <div class="act-copy reveal">
-
-                <span class="act-number">
-                    03 / THE CREATIVE RELEASE
-                </span>
-
-                <h2>
-                    BEAUTIFUL<br>ANARCHY
-                </h2>
-
-                <p class="act-sub">
-                    Where imagination becomes creation.
-                </p>
-
-                <p class="act-desc">
-                    Ideas, sketches, sewing experiments and projects
-                    in motion. A space for creative freedom, but also
-                    for the discipline, research and organisation
-                    that turn an intention into something real.
-                </p>
-
-                <div class="act-tags">
-
-                    <span>Creative projects</span>
-                    <span>Drawing</span>
-                    <span>Couture</span>
-                    <span>Art direction</span>
-
-                </div>
-
-            </div>
-
-            <div class="visual visual-three">
-
-                <span class="visual-caption">
-                    Fragments of ideas becoming reality.
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- SELECTED PROJECTS -->
-
-        <section class="archive" id="projects">
-
-            <div class="archive-head reveal">
-
-                <h3>SELECTED PROJECTS</h3>
-
-                <span class="micro">
-                    A FEW THINGS IN THE MAKING · 2026
-                </span>
-
-            </div>
-
-            <div class="archive-grid">
-
-                <article class="archive-card reveal">
-
-                    <small>01 — BRAND IN DEVELOPMENT</small>
-
-                    <strong>ESPERINES</strong>
-
-                    <p>
-                        Lingerie, swimwear and dancewear.
-                        A study of femininity, movement and materials.
-                    </p>
-
-                    <small>CONCEPT / DESIGN / RESEARCH</small>
-
-                </article>
-
-
-                <article class="archive-card reveal">
-
-                    <small>02 — EDITORIAL PROJECT</small>
-
-                    <strong>
-                        LA MODE<br>EN OFF
-                    </strong>
-
-                    <p>
-                        Decoding fashion beyond the runway:
-                        collections, culture, trends and creative voices.
-                    </p>
-
-                    <small>EDITORIAL / FASHION CULTURE</small>
-
-                </article>
-
-
-                <article class="archive-card reveal">
-
-                    <small>03 — PERSONAL PRACTICE</small>
-
-                    <strong>
-                        STUDIO<br>FRAGMENTS
-                    </strong>
-
-                    <p>
-                        Drawings, sewing, visual research and experiments.
-                        A living collection of ideas.
-                    </p>
-
-                    <small>DRAWING / COUTURE / EXPERIMENT</small>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- EPILOGUE -->
-
-        <section class="epilogue" id="epilogue">
-
-            <div class="epilogue-inner reveal">
-
-                <span class="micro">
-                    EPILOGUE
-                </span>
-
-                <h2>
-                    TO BE<br>CONTINUED.
-                </h2>
-
-                <p>
-                    The story doesn't end here.<br>
-                    It simply awaits its next chapter.
-                </p>
-
-                <div class="contact">
-
-                    LET'S CONNECT
-
-                    <br><br>
-
-                    <a href="mailto:ton.adresse@email.com">
-                        TON.ADRESSE@EMAIL.COM
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <span>THE ART OF BECOMING</span>
-
-        <span>AN ENDLESS PURSUIT OF PERFECTION</span>
-
-        <span>© 2026</span>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        const menuBtn = document.getElementById('menuBtn');
-        const menuPanel = document.getElementById('menuPanel');
-
-        menuBtn.addEventListener('click', () => {
-
-            const isOpen = menuPanel.classList.toggle('open');
-
-            menuBtn.textContent = isOpen ? '×' : '☰';
-
-            menuBtn.setAttribute('aria-expanded', String(isOpen));
-
-        });
-
-
-        menuPanel.querySelectorAll('a').forEach(link => {
-
-            link.addEventListener('click', () => {
-
-                menuPanel.classList.remove('open');
-
-                menuBtn.textContent = '☰';
-
-                menuBtn.setAttribute('aria-expanded', 'false');
-
-            });
-
-        });
-
-
-        const observer = new IntersectionObserver(entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add('visible');
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        }, { threshold: 0.12 });
-
-
-        document.querySelectorAll('.reveal').forEach(element => {
-
-            observer.observe(element);
-
-        });
-
-    </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-
-    const curtain = document.getElementById("curtain");
-    const actionButton = document.getElementById("actionButton");
-
-    actionButton.addEventListener("click", function() {
-
-        curtain.classList.add("open");
-
-        setTimeout(function() {
-            curtain.remove();
-        }, 2200);
-
-    });
-
-});
-</script>
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="theme-color" content="#171513">
-
-    <title>THE ART OF BECOMING — Creative Portfolio</title>
-
-    <meta name="description" content="A creative portfolio exploring art direction, fashion, culture and creation.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@300;400;500&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="grain"></div>
+    <!-- RIDEAU D'OUVERTURE -->
 
-    <!-- NAVIGATION -->
+    <div id="curtain">
+
+        <div class="curtain-panel left"></div>
+        <div class="curtain-panel right"></div>
+
+        <div class="curtain-content">
+
+            <p class="curtain-subtitle">
+                A CREATIVE PORTFOLIO
+            </p>
+
+            <h1>
+                THE ART OF<br>
+                BECOMING
+            </h1>
+
+            <button id="actionButton">
+                LEVER DE RIDEAU
+            </button>
+
+            <p class="curtain-footer">
+                AN ENDLESS PURSUIT OF PERFECTION
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- BANDEAU FIXE -->
 
     <header class="topbar">
 
-        <a class="brand" href="#home">
-            THE ART OF BECOMING
+        <a href="index.html" class="brand">
+            <span>Portfolio 2026-2027</span>
+            <span>Perrine Macaire</span>
         </a>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
-            ☰
+        <button class="menu-button" id="menuButton"
+            aria-label="Ouvrir le menu" aria-expanded="false">
+
+            <img src="images/ornement-menu.png" alt="">
+
         </button>
 
     </header>
 
+
+    <!-- MENU LATERAL -->
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
     <nav class="menu-panel" id="menuPanel">
 
-        <small>AN ENDLESS PURSUIT OF PERFECTION</small>
+        <h2>MENU</h2>
 
-        <a href="#act1">ACT I — APPEARANCES</a>
-        <a href="#act2">ACT II — DEVOTION</a>
-        <a href="#act3">ACT III — ANARCHY</a>
-        <a href="#epilogue">EPILOGUE</a>
+        <div class="menu-decoration">
+            <img src="images/ornement-menu.png" alt="">
+        </div>
+
+        <a href="prologue.html" class="menu-link">
+            <span>PROLOGUE</span>
+            <i>La Galerie</i>
+        </a>
+
+        <a href="act1.html" class="menu-link">
+            <span>ACT I</span>
+            <i>The Art of Appearances</i>
+        </a>
+
+        <a href="act2.html" class="menu-link">
+            <span>ACT II</span>
+            <i>Tragic Devotion</i>
+        </a>
+
+        <a href="act3.html" class="menu-link">
+            <span>ACT III</span>
+            <i>Beautiful Anarchy</i>
+        </a>
+
+        <a href="epilogue.html" class="menu-link">
+            <span>EPILOGUE</span>
+            <i>To be continued</i>
+        </a>
 
     </nav>
 
 
-    <main>
+    <!-- ACCUEIL -->
 
-        <!-- PROLOGUE -->
+    <main>
 
         <section class="hero" id="home">
 
-            <div class="hero-copy">
+            <div class="hero-image"></div>
 
-                <span class="eyebrow">
-                    A CREATIVE PORTFOLIO · 2026
-                </span>
-
-                <h1>
-                    <span>THE ART</span>
-                    <span>OF BECOMING</span>
-                </h1>
-
-                <p class="hero-sub">
-                    An endless pursuit of perfection.
-                </p>
-
-                <div class="hero-index">
-
-                    <span>ART DIRECTION</span>
-                    <span>FASHION · CULTURE · CREATION</span>
-
-                </div>
-
-            </div>
-
-            <div class="hero-art">
-
-                <span class="hero-art-label">
-                    A study in contrasts.
-                </span>
-
-            </div>
-
-            <div class="scroll-note">
-                SCROLL TO EXPLORE ↓
-            </div>
-
-        </section>
-
-
-        <!-- INTRODUCTION -->
-
-        <section class="intro reveal">
-
-            <span class="micro">
-                PROLOGUE — THE OPENING SCENE
-            </span>
-
-            <h2>
-                A world between perfection and imperfection.
-            </h2>
-
-            <p>
-                A personal exploration of beauty, contradiction
-                and the endless desire to create.
-            </p>
-
-        </section>
-
-
-        <!-- ACT I -->
-
-        <section class="act act-one" id="act1">
-
-            <div class="act-copy reveal">
-
-                <span class="act-number">
-                    01 / THE FIRST IMPRESSION
-                </span>
+            <div class="hero-title">
 
                 <h2>
-                    THE ART OF<br>APPEARANCES
+                    THE ART<br>
+                    OF<br>
+                    BECOMING
                 </h2>
 
-                <p class="act-sub">
-                    An ode to beauty, culture and elegance.
-                </p>
-
-                <p class="act-desc">
-                    An archive of the worlds that shape my eye:
-                    art, ballet, cinema, architecture, music and fashion.
-                    A fascination for timeless elegance, monumental
-                    places and carefully composed images.
-                </p>
-
-                <div class="act-tags">
-
-                    <span>Art & heritage</span>
-                    <span>Ballet</span>
-                    <span>Architecture</span>
-                    <span>Cinema</span>
-                    <span>Fashion</span>
-                    <span>Music</span>
-
-                </div>
-
             </div>
 
-            <div class="visual visual-one">
-
-                <span class="visual-caption">
-                    The cultural archive — references, places & images.
-                </span>
-
+            <div class="hero-signature">
+                An endless pursuit<br>
+                of perfection
             </div>
 
-        </section>
+            <div class="hero-bottom">
 
-
-        <!-- ACT II -->
-
-        <section class="act act-two" id="act2">
-
-            <div class="act-copy reveal">
-
-                <span class="act-number">
-                    02 / THE INNER CONFLICT
-                </span>
-
-                <h2>
-                    TRAGIC<br>DEVOTION
-                </h2>
-
-                <p class="act-sub">
-                    An ode to beauty, desire and contradiction.
-                </p>
-
-                <p class="act-desc">
-                    A reflection on fashion, the human body and the cost
-                    of perfection. Textile research, animal ethics,
-                    responsible creation and an independent vision
-                    of femininity meet a darker fascination with
-                    glamour and decadence.
-                </p>
-
-                <div class="act-tags">
-
-                    <span>Ethics</span>
-                    <span>Textiles & skin</span>
-                    <span>Femininity</span>
-                    <span>Beautiful decay</span>
-
-                </div>
-
-            </div>
-
-            <div class="visual visual-two">
-
-                <span class="visual-caption">
-                    Beauty can enchant. It can also consume.
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- ACT III -->
-
-        <section class="act act-three" id="act3">
-
-            <div class="act-copy reveal">
-
-                <span class="act-number">
-                    03 / THE CREATIVE RELEASE
-                </span>
-
-                <h2>
-                    BEAUTIFUL<br>ANARCHY
-                </h2>
-
-                <p class="act-sub">
-                    Where imagination becomes creation.
-                </p>
-
-                <p class="act-desc">
-                    Ideas, sketches, sewing experiments and projects
-                    in motion. A space for creative freedom, but also
-                    for the discipline, research and organisation
-                    that turn an intention into something real.
-                </p>
-
-                <div class="act-tags">
-
-                    <span>Creative projects</span>
-                    <span>Drawing</span>
-                    <span>Couture</span>
-                    <span>Art direction</span>
-
-                </div>
-
-            </div>
-
-            <div class="visual visual-three">
-
-                <span class="visual-caption">
-                    Fragments of ideas becoming reality.
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- SELECTED PROJECTS -->
-
-        <section class="archive" id="projects">
-
-            <div class="archive-head reveal">
-
-                <h3>SELECTED PROJECTS</h3>
-
-                <span class="micro">
-                    A FEW THINGS IN THE MAKING · 2026
-                </span>
-
-            </div>
-
-            <div class="archive-grid">
-
-                <article class="archive-card reveal">
-
-                    <small>01 — BRAND IN DEVELOPMENT</small>
-
-                    <strong>ESPERINES</strong>
-
-                    <p>
-                        Lingerie, swimwear and dancewear.
-                        A study of femininity, movement and materials.
-                    </p>
-
-                    <small>CONCEPT / DESIGN / RESEARCH</small>
-
-                </article>
-
-
-                <article class="archive-card reveal">
-
-                    <small>02 — EDITORIAL PROJECT</small>
-
-                    <strong>
-                        LA MODE<br>EN OFF
-                    </strong>
-
-                    <p>
-                        Decoding fashion beyond the runway:
-                        collections, culture, trends and creative voices.
-                    </p>
-
-                    <small>EDITORIAL / FASHION CULTURE</small>
-
-                </article>
-
-
-                <article class="archive-card reveal">
-
-                    <small>03 — PERSONAL PRACTICE</small>
-
-                    <strong>
-                        STUDIO<br>FRAGMENTS
-                    </strong>
-
-                    <p>
-                        Drawings, sewing, visual research and experiments.
-                        A living collection of ideas.
-                    </p>
-
-                    <small>DRAWING / COUTURE / EXPERIMENT</small>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- EPILOGUE -->
-
-        <section class="epilogue" id="epilogue">
-
-            <div class="epilogue-inner reveal">
-
-                <span class="micro">
-                    EPILOGUE
-                </span>
-
-                <h2>
-                    TO BE<br>CONTINUED.
-                </h2>
-
-                <p>
-                    The story doesn't end here.<br>
-                    It simply awaits its next chapter.
-                </p>
-
-                <div class="contact">
-
-                    LET'S CONNECT
-
-                    <br><br>
-
-                    <a href="mailto:ton.adresse@email.com">
-                        TON.ADRESSE@EMAIL.COM
-                    </a>
-
-                </div>
+                <span>CREATIVE PORTFOLIO</span>
+                <span>2026 — 2027</span>
 
             </div>
 
@@ -896,72 +144,59 @@ document.addEventListener("DOMContentLoaded", function() {
     </main>
 
 
-    <!-- FOOTER -->
-
-    <footer>
-
-        <span>THE ART OF BECOMING</span>
-
-        <span>AN ENDLESS PURSUIT OF PERFECTION</span>
-
-        <span>© 2026</span>
-
-    </footer>
-
-
     <!-- JAVASCRIPT -->
 
     <script>
 
-        const menuBtn = document.getElementById('menuBtn');
-        const menuPanel = document.getElementById('menuPanel');
+        // RIDEAU D'OUVERTURE
 
-        menuBtn.addEventListener('click', () => {
+        const curtain = document.getElementById("curtain");
+        const actionButton = document.getElementById("actionButton");
 
-            const isOpen = menuPanel.classList.toggle('open');
+        actionButton.addEventListener("click", function() {
 
-            menuBtn.textContent = isOpen ? '×' : '☰';
+            curtain.classList.add("open");
 
-            menuBtn.setAttribute('aria-expanded', String(isOpen));
-
-        });
-
-
-        menuPanel.querySelectorAll('a').forEach(link => {
-
-            link.addEventListener('click', () => {
-
-                menuPanel.classList.remove('open');
-
-                menuBtn.textContent = '☰';
-
-                menuBtn.setAttribute('aria-expanded', 'false');
-
-            });
+            setTimeout(function() {
+                curtain.classList.add("finished");
+            }, 1200);
 
         });
 
 
-        const observer = new IntersectionObserver(entries => {
+        // MENU LATERAL
 
-            entries.forEach(entry => {
+        const menuButton = document.getElementById("menuButton");
+        const menuPanel = document.getElementById("menuPanel");
+        const menuOverlay = document.getElementById("menuOverlay");
 
-                if (entry.isIntersecting) {
+        function toggleMenu() {
 
-                    entry.target.classList.add('visible');
+            const isOpen = menuPanel.classList.toggle("active");
 
-                    observer.unobserve(entry.target);
+            menuOverlay.classList.toggle("active", isOpen);
 
-                }
+            menuButton.setAttribute("aria-expanded", isOpen);
 
-            });
+        }
 
-        }, { threshold: 0.12 });
+        menuButton.addEventListener("click", toggleMenu);
+
+        menuOverlay.addEventListener("click", toggleMenu);
 
 
-        document.querySelectorAll('.reveal').forEach(element => {
+        // FERMETURE AVEC LA TOUCHE ECHAP
 
-            observer.observe(element);
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                menuPanel.classList.remove("active");
+                menuOverlay.classList.remove("active");
+
+                menuButton.setAttribute("aria-expanded", "false");
+
+            }
 
         });
 
