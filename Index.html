@@ -462,16 +462,20 @@
 
     </script>
 <script>
-const curtain = document.getElementById("curtain");
-const actionButton = document.getElementById("actionButton");
+document.addEventListener("DOMContentLoaded", function() {
 
-actionButton.addEventListener("click", function() {
+    const curtain = document.getElementById("curtain");
+    const actionButton = document.getElementById("actionButton");
 
-    curtain.classList.add("open");
+    actionButton.addEventListener("click", function() {
 
-    setTimeout(function() {
-        curtain.classList.add("finished");
-    }, 2100);
+        curtain.classList.add("open");
+
+        setTimeout(function() {
+            curtain.remove();
+        }, 2200);
+
+    });
 
 });
 </script>
