@@ -1228,11 +1228,6 @@ footer {
     pointer-events: none;
 }
 
-/* DISPARITION FINALE */
-
-#curtain.finished {
-    display: none;
-}
 /* AFFICHER DIRECTEMENT LE PORTFOLIO */
 
 #curtain {
