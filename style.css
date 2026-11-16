@@ -1228,8 +1228,8 @@ footer {
     pointer-events: none;
 }
 
-/* AFFICHER DIRECTEMENT LE PORTFOLIO */
+/* DISPARITION FINALE */
 
-#curtain {
-    display: none !important;
+#curtain.finished {
+    display: none;
 }
