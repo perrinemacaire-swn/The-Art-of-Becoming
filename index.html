@@ -147,7 +147,21 @@
     <!-- JAVASCRIPT -->
 
     <script>
+        
+        // RIDEAU D'OUVERTURE
 
+        const curtain = document.getElementById("curtain");
+        const actionButton = document.getElementById("actionButton");
+
+        actionButton.addEventListener("click", function() {
+
+            curtain.classList.add("open");
+
+            setTimeout(function() {
+                curtain.classList.add("finished");
+            }, 1200);
+
+        });
        // OUVERTURE DU RIDEAU
 
 const curtain = document.getElementById("curtain");
