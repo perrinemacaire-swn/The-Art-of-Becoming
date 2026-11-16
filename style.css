@@ -1118,3 +1118,118 @@ footer {
     }
 
 }
+/* RIDEAU D'OUVERTURE */
+
+#curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #A51F32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* LES DEUX PANS */
+
+.curtain-panel {
+    position: absolute;
+    top: 0;
+    width: 50.5%;
+    height: 100%;
+    background-color: #A51F32;
+    z-index: 1;
+
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,0.12) 0px,
+            transparent 18px,
+            rgba(255,255,255,0.08) 35px,
+            transparent 55px
+        );
+
+    box-shadow: inset 0 0 70px rgba(0,0,0,0.2);
+
+    transition: transform 2s cubic-bezier(.77,0,.18,1);
+}
+
+.curtain-panel.left {
+    left: 0;
+}
+
+.curtain-panel.right {
+    right: 0;
+}
+
+/* TEXTE */
+
+.curtain-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #F1EAE0;
+    transition: opacity .5s ease;
+}
+
+.curtain-subtitle,
+.curtain-footer {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.curtain-content h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(45px, 8vw, 105px);
+    font-weight: 400;
+    line-height: .9;
+    margin: 35px 0;
+}
+
+.curtain-content h1 i {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+/* BOUTON ACTION */
+
+#actionButton {
+    margin: 25px 0;
+    padding: 15px 45px;
+    border: 1px solid #F1EAE0;
+    background: transparent;
+    color: #F1EAE0;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+#actionButton:hover {
+    background: #F1EAE0;
+    color: #A51F32;
+}
+
+/* ANIMATION D'OUVERTURE */
+
+#curtain.open .left {
+    transform: translateX(-100%);
+}
+
+#curtain.open .right {
+    transform: translateX(100%);
+}
+
+#curtain.open .curtain-content {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* DISPARITION FINALE */
+
+#curtain.finished {
+    display: none;
+}
