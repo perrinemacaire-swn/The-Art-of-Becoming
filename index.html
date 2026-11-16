@@ -148,20 +148,18 @@
 
     <script>
 
-        // RIDEAU D'OUVERTURE
+       // OUVERTURE DU RIDEAU
 
-        const curtain = document.getElementById("curtain");
-        const actionButton = document.getElementById("actionButton");
+const curtain = document.getElementById("curtain");
+const actionButton = document.getElementById("actionButton");
 
-        actionButton.addEventListener("click", function() {
+actionButton.addEventListener("click", function() {
+    curtain.classList.add("open");
 
-            curtain.classList.add("open");
-
-            setTimeout(function() {
-                curtain.classList.add("finished");
-            }, 1200);
-
-        });
+    setTimeout(function() {
+        curtain.classList.add("finished");
+    }, 1200);
+});
 
 
         // MENU LATERAL
