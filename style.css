@@ -1233,3 +1233,8 @@ footer {
 #curtain.finished {
     display: none;
 }
+/* AFFICHER DIRECTEMENT LE PORTFOLIO */
+
+#curtain {
+    display: none !important;
+}
