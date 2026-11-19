@@ -1,206 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>THE ART OF BECOMING — Perrine Macaire</title>
-
-    <meta name="description" content="A creative portfolio by Perrine Macaire.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@300;400;500&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7A0920">
+  <title>Accueil — The Art of Becoming</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- RIDEAU D'OUVERTURE -->
-
-    <div id="curtain">
-
-        <div class="curtain-panel left"></div>
-        <div class="curtain-panel right"></div>
-
-        <div class="curtain-content">
-
-            <p class="curtain-subtitle">
-                A CREATIVE PORTFOLIO
-            </p>
-
-            <h1>
-                THE ART OF<br>
-                BECOMING
-            </h1>
-
-            <button id="actionButton">
-                LEVER DE RIDEAU
-            </button>
-
-            <p class="curtain-footer">
-                AN ENDLESS PURSUIT OF PERFECTION
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- BANDEAU FIXE -->
-
-    <header class="topbar">
-
-        <a href="index.html" class="brand">
-            <span>Portfolio 2026-2027</span>
-            <span>Perrine Macaire</span>
-        </a>
-
-        <button class="menu-button" id="menuButton"
-            aria-label="Ouvrir le menu" aria-expanded="false">
-
-            <img src="images/ornement-menu.png" alt="">
-
-        </button>
-
-    </header>
-
-
-    <!-- MENU LATERAL -->
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-
-    <nav class="menu-panel" id="menuPanel">
-
-        <h2>MENU</h2>
-
-        <div class="menu-decoration">
-            <img src="images/ornement-menu.png" alt="">
-        </div>
-
-        <a href="prologue.html" class="menu-link">
-            <span>PROLOGUE</span>
-            <i>La Galerie</i>
-        </a>
-
-        <a href="act1.html" class="menu-link">
-            <span>ACT I</span>
-            <i>The Art of Appearances</i>
-        </a>
-
-        <a href="act2.html" class="menu-link">
-            <span>ACT II</span>
-            <i>Tragic Devotion</i>
-        </a>
-
-        <a href="act3.html" class="menu-link">
-            <span>ACT III</span>
-            <i>Beautiful Anarchy</i>
-        </a>
-
-        <a href="epilogue.html" class="menu-link">
-            <span>EPILOGUE</span>
-            <i>To be continued</i>
-        </a>
-
-    </nav>
-
-
-    <!-- ACCUEIL -->
-
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="hero-image"></div>
-
-            <div class="hero-title">
-
-                <h2>
-                    THE ART<br>
-                    OF<br>
-                    BECOMING
-                </h2>
-
-            </div>
-
-            <div class="hero-signature">
-                An endless pursuit<br>
-                of perfection
-            </div>
-
-            <div class="hero-bottom">
-
-                <span>CREATIVE PORTFOLIO</span>
-                <span>2026 — 2027</span>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-        
-        // RIDEAU D'OUVERTURE
-
-        const curtain = document.getElementById("curtain");
-        const actionButton = document.getElementById("actionButton");
-
-        actionButton.addEventListener("click", function() {
-
-            curtain.classList.add("open");
-
-            setTimeout(function() {
-                curtain.classList.add("finished");
-            }, 1200);
-
-        });
-
-
-        // MENU LATERAL
-
-        const menuButton = document.getElementById("menuButton");
-        const menuPanel = document.getElementById("menuPanel");
-        const menuOverlay = document.getElementById("menuOverlay");
-
-        function toggleMenu() {
-
-            const isOpen = menuPanel.classList.toggle("active");
-
-            menuOverlay.classList.toggle("active", isOpen);
-
-            menuButton.setAttribute("aria-expanded", isOpen);
-
-        }
-
-        menuButton.addEventListener("click", toggleMenu);
-
-        menuOverlay.addEventListener("click", toggleMenu);
-
-
-        // FERMETURE AVEC LA TOUCHE ECHAP
-
-        document.addEventListener("keydown", function(event) {
-
-            if (event.key === "Escape") {
-
-                menuPanel.classList.remove("active");
-                menuOverlay.classList.remove("active");
-
-                menuButton.setAttribute("aria-expanded", "false");
-
-            }
-
-        });
-
-    </script>
-
+<div id="curtain" aria-label="Lever de rideau">
+  <div class="curtain-panel left"></div><div class="curtain-panel right"></div>
+  <div class="curtain-content">
+    <p class="curtain-subtitle">A CREATIVE PORTFOLIO</p>
+    <h1>THE ART OF<br>BECOMING</h1>
+    <p class="curtain-tagline">An endless pursuit of perfection</p>
+    <button id="actionButton" type="button">LEVER DE RIDEAU</button>
+  </div>
+</div>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Retour à l'accueil">Perrine Macaire</a>
+  <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
+    <img src="assets/menu-icon.png" alt="">
+  </button>
+</header>
+<div class="menu-backdrop" aria-hidden="true"></div>
+<aside class="menu-panel" id="site-menu" aria-label="Navigation principale">
+  <h2 class="menu-heading">THE ART OF BECOMING</h2>
+  <nav class="menu-links">
+    <a href="index.html"><strong>ACCUEIL</strong><span>Home</span></a>
+    <a href="index.html#prologue"><strong>PROLOGUE</strong><span>Introduction</span></a>
+    <a href="galerie.html"><strong>LA GALERIE</strong><span>Inspirations &amp; références</span></a>
+    <a href="act-i.html"><strong>ACT I</strong><span>The Art of Appearances</span></a>
+    <a href="act-ii.html"><strong>ACT II</strong><span>Tragic Devotion</span></a>
+    <a href="act-iii.html"><strong>ACT III</strong><span>Beautiful Anarchy</span></a>
+    <a href="index.html#continued"><strong>EPILOGUE</strong><span>To be continued</span></a>
+  </nav>
+</aside>
+<main>
+<section class="hero" id="accueil">
+  <img class="hero-image" src="assets/danse-theatre.jpg" alt="Danseuse dans une ambiance théâtrale">
+  <div class="hero-copy">
+    <p class="hero-kicker">A CREATIVE PORTFOLIO</p>
+    <h1>THE ART OF<br>BECOMING</h1>
+    <p class="hero-signature">Perrine Macaire</p>
+  </div>
+</section>
+
+<section class="prologue-section" id="prologue">
+  <div class="section-inner">
+    <h2 class="section-title">PROLOGUE</h2>
+    <p class="script-line">“When the pursuit of perfection becomes an obsession.”</p>
+    <p class="prologue-copy">Entrez dans cette pièce de théâtre et suivez, au fil des actes, les différentes facettes d’une quête de perfection. Découvrez comment le désir de répondre à un idéal de beauté peut peu à peu devenir une obsession, jusqu’à freiner notre créativité, altérer notre identité et nous éloigner de ce qui nous rend uniques.</p>
+  </div>
+</section>
+
+<section class="gallery-preview" aria-label="Aperçu de la galerie">
+  <img class="gallery-building" src="assets/immeuble-galerie.png" alt="Façade d'un immeuble haussmannien">
+  <div class="gallery-card">
+    <h2>LA GALERIE</h2>
+    <a class="text-link" href="galerie.html">Voir plus</a>
+  </div>
+</section>
+
+<section class="continued-section" id="continued">
+  <h2 class="section-title">TO BE CONTINUED...</h2>
+  <div class="download-area">
+    <div>Télécharger :</div>
+    <a href="assets/cv-perrine-macaire.pdf" download="CV-Perrine-Macaire.pdf">CV</a>
+    <button id="letter-download" type="button">Lettre de motivation</button>
+    <p class="download-note">La lettre de motivation sera bientôt disponible en PDF.</p>
+  </div>
+  <footer class="contact-footer">
+    <div class="contact-name">Perrine<br>MACAIRE</div>
+    <a href="tel:+33658886774">06.58.88.67.74.</a>
+    <a href="mailto:perrine.macaire@gmail.com">perrine.macaire@gmail.com</a>
+  </footer>
+</section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
